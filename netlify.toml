@@ -1,8 +1,15 @@
 [build]
   publish = "."
 
+# まず config.yml は素直に返す
 [[redirects]]
-  # /admin 以下はすべて admin/index.html へ
+  from = "/admin/config.yml"
+  to   = "/admin/config.yml"
+  status = 200
+  force = true
+
+# それ以外の /admin/* は index.html にフォールバック
+[[redirects]]
   from = "/admin/*"
   to   = "/admin/index.html"
   status = 200
