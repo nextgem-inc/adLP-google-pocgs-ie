@@ -3,10 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <title>Content Manager</title>
-    <!-- Netlify CMS (旧版) を使うと、config.yml を自動で拾ってくれます -->
+    <!-- 旧版 Netlify CMS -->
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
   </head>
   <body>
-    <!-- ここは空でも OK。YAML は自動読み込みされ、/admin/config.yml を探します -->
+    <!-- CMS をマウントするための要素 -->
+    <div id="nc-root"></div>
+    <!-- 明示的に初期化（なくても動くはずですが、入れておくと確実です） -->
+    <script>
+      CMS.init();
+    </script>
   </body>
 </html>
