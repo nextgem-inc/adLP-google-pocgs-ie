@@ -1,17 +1,16 @@
 backend:
   name: git-gateway
-  branch: main  # または "master" に合わせてください
+  branch: main
 
-media_folder: "assets/images/uploads"
-public_folder: "/assets/images/uploads"
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 collections:
   - name: "pages"
-    label: "ページ"
+    label: "Pages"
     files:
-      - file: "index.html"
-        label: "トップページ"
+      - label: "Index Page"
         name: "index"
+        file: "index.html"
         fields:
-          - { label: "タイトル", name: "title", widget: "string" }
-          - { label: "本文", name: "body", widget: "text" }
+          - { label: "Title", name: "title", widget: "string" }
