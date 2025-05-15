@@ -3,3 +3,15 @@
   [headers.values]
     Content-Type = "text/yaml; charset=utf-8"
     Cache-Control = "no-cache"
+    
+[[redirects]]
+  from   = "/admin/config.yml"
+  to     = "/admin/config.yml"
+  status = 200
+  force  = true
+
+[[redirects]]
+  from   = "/admin/*"
+  to     = "/admin/index.html"
+  status = 200
+  force  = true
