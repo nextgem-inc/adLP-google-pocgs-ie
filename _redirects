@@ -1,0 +1,5 @@
+# config.yml はそのまま返す
+/admin/config.yml   /admin/config.yml   200
+
+# そのほか admin 以下は index.html にフォールバック
+/admin/*             /admin/index.html   200
