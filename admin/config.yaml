@@ -1,15 +1,20 @@
 backend:
-  name: git-gateway
+  name: git-gateway     # 認証＋コミット用バックエンド
   branch: main
 
-media_folder: "uploads"
-public_folder: "/uploads"
+media_folder: "uploads"     # リポジトリ内に保存するフォルダ
+public_folder: "/uploads"   # 公開サイト上のパス
+
+media_library:             # 必須プロパティなので、空でも良い形にする
+  name: uploadcare        # 例として Uploadcare を指定
+  config:
+    publicKey: "demo"      # ダミーキーでもOK（本番は実際のキーに差し替え）
 
 collections:
-  - name: "pages"
-    label: "Pages"
-    folder: ""       # 既存の静的HTMLがルート直下にある場合
-    create: false
+  - name: "pages"          # コレクション名
+    label: "Pages"         # 管理画面に出るラベル
+    folder: ""             # 静的ファイルがルート直下にある場合は空文字
+    create: false          # 既存ファイルのみ編集
     fields:
       - label: "ファイル名"
         name: path
