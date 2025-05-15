@@ -1,17 +1,13 @@
-[build]
-  publish = "."
-
-# それ以外の /admin/* は index.html にフォールバック
-[[redirects]]
-  from = "/admin/*"
-  to   = "/admin/index.html"
-  status = 200
-  
-# まず config.yml は素直に返す
+# config.yml は YAML として返却
 [[redirects]]
   from = "/admin/config.yml"
   to   = "/admin/config.yml"
   status = 200
   force = true
 
-
+# その他 admin 以下は SPA 風に index.html へ
+[[redirects]]
+  from   = "/admin/*"
+  to     = "/admin/index.html"
+  status = 200
+  force  = true
