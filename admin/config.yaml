@@ -2,15 +2,14 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images/uploads"
-public_folder: "/images/uploads"
+media_folder: "uploads"      # Git 管理下のメディア保存先
+public_folder: "/uploads"
 
 collections:
   - name: "pages"
     label: "Pages"
-    files:
-      - label: "Index Page"
-        name: "index"
-        file: "index.html"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
+    folder: ""               # 静的 HTML がルート直下の場合は空文字
+    create: false            # 既存ページのみ編集
+    fields:
+      - { label: "ファイル名", name: "path", widget: "hidden" }
+      - { label: "本文",     name: "body", widget: "markdown" }
