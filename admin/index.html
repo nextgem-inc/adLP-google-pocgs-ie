@@ -1,17 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Content Manager</title>
-    <!-- 旧版 Netlify CMS -->
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-  </head>
-  <body>
-    <!-- CMS をマウントするための要素 -->
-    <div id="nc-root"></div>
-    <!-- 明示的に初期化（なくても動くはずですが、入れておくと確実です） -->
-    <script>
-      CMS.init();
-    </script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <title>Admin</title>
+</head>
+<body>
+  <script src="https://unpkg.com/decap-cms@^2.0.0/dist/decap-cms.js"></script>
+  <script>
+    window.CMS_MANUAL_INIT = true;
+  </script>
+  <div id="nc-root"></div>
+  <script>
+    decapCms.init({
+      config: window.CMS_CONFIG // config.yml を自動で読み込み
+    });
+  </script>
+</body>
 </html>
